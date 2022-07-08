@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using TwoDaysProject.Web.Models;
+using TwoDaysProject.Core.ViewModels;
 
-namespace TwoDaysProject.Web.Controllers
+namespace TwoDaysProject.Core.Controllers
 {
     public class HomeController : Controller
     {

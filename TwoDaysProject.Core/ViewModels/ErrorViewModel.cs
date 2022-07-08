@@ -1,4 +1,4 @@
-namespace TwoDaysProject.Web.Models
+namespace TwoDaysProject.Core.ViewModels
 {
     public class ErrorViewModel
     {
