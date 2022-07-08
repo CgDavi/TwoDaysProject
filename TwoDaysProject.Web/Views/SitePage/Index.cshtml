@@ -1,10 +1,15 @@
-﻿@model SitePageViewModel
+﻿@model SettingsViewModel
 @{
     ViewData["Title"] = "Home Page";
+}
+@section MoreTags{
+<title>Ρυθμίσεις</title>
 }
 <div class="text-center">
     <h1 class="display-4">Ρυθμίσεις</h1>
 </div>
+<hr />
+<partial name="Partials/Index/_ApiKey" />
 <hr />
 <div class="row my-3">
     <div class="col-lg-2">

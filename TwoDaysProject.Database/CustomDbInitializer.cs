@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TwoDaysProject.Entities.Identity;
+using TwoDaysProject.Entities.Management;
 
 namespace TwoDaysProject.Database
 {
@@ -33,6 +34,9 @@ namespace TwoDaysProject.Database
                        UserId = "39db4566-a788-490e-b8a6-4fe9b829fcc2"
                    }
             );
+            modelBuilder.Entity<GeneralConfig>().HasData(
+       new GeneralConfig() { Id = 1 }
+       );
         }
     }
 }

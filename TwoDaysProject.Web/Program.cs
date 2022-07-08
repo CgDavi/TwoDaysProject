@@ -18,6 +18,7 @@ builder.Services.AddDefaultIdentity<CustomUser>(options => options.SignIn.Requir
 
 builder.Services.AddTransient<ISitePageManager, SitePageServices>();
 builder.Services.AddTransient<INewsApiManager, NewsApiServices>();
+builder.Services.AddTransient<ISettingsManager, SettingsServices>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddControllersWithViews().AddDataAnnotationsLocalization().AddApplicationPart(Assembly.GetAssembly(typeof(TwoDaysProject.Core.Controllers.HomeController))).AddRazorRuntimeCompilation();
 

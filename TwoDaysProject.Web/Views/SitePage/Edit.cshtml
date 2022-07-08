@@ -2,6 +2,9 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+@section MoreTags{
+    <title>Επεξεργασία Σελίδας @Model?.SitePage?.Title</title>
+}
 <div class="text-center">
     <h1 class="display-6">Επεξεργασία Σελίδας <b class="text-primary">@Model?.SitePage.Title</b></h1>
 </div>

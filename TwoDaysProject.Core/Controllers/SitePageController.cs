@@ -13,19 +13,31 @@ namespace TwoDaysProject.Core.Controllers
         private readonly ILogger<SitePageController> _logger;
         private readonly ISitePageManager _sitePageManager;
         private readonly INewsApiManager _apiManager;
+        private readonly ISettingsManager _settingsManager;
 
-        public SitePageController(ILogger<SitePageController> logger, ISitePageManager sitePageManager, INewsApiManager apiManager)
+        public SitePageController(ILogger<SitePageController> logger, ISitePageManager sitePageManager, INewsApiManager apiManager, ISettingsManager settingsManager)
         {
             _logger = logger;
             _sitePageManager = sitePageManager;
             _apiManager = apiManager;
+            _settingsManager = settingsManager;
         }
 
         public IActionResult Index()
         {
-            var model = new SitePageViewModel();
+            var model = new SettingsViewModel();
             model.SitePages = _sitePageManager.GetSitePages();
+            model.GeneralConfig = _settingsManager.GetGeneralConfig();
+            model.ApiKey = model.GeneralConfig.ApiKey;
             return View(model);
+        }
+        [HttpPost]
+        public IActionResult UpdateApiKey(SettingsViewModel model)
+        {
+            model.GeneralConfig = _settingsManager.GetGeneralConfig();
+            model.GeneralConfig.ApiKey = model.ApiKey;
+            _settingsManager.UpdateGeneralConfig(model.GeneralConfig);
+            return RedirectToAction("Index");
         }
         public IActionResult Create()
         {
@@ -61,9 +73,9 @@ namespace TwoDaysProject.Core.Controllers
         public IActionResult Details(int Id)
         {
             var model = new SitePageViewModel();
-            var apiKey = "f73967c13c4b45c886d6bc98d61fce04";
             model.SitePage = _sitePageManager.GetSitePageById(Id);
-            model.Data = _apiManager.GetArticles(apiKey, model.SitePage?.Category);
+            model.GeneralConfig = _settingsManager.GetGeneralConfig();
+            model.Data = _apiManager.GetArticles(model.GeneralConfig?.ApiKey, model.SitePage?.Category);
             return View(model);
         }
 

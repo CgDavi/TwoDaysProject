@@ -16,7 +16,7 @@ namespace TwoDaysProject.Web.ViewComponents.MainMenuViewComponent
         public IViewComponentResult Invoke()
         {
             var user = _httpContextAccessor.HttpContext?.User;
-            var model = new SitePageViewModel();
+            var model = new MainMenuViewModel();
             model.SitePages = _sitePageManager.GetSitePages();
             return View(model);
         }

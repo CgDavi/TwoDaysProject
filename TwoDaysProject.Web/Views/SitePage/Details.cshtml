@@ -1,6 +1,6 @@
 ﻿@model SitePageViewModel
-@{
-    ViewData["Title"] = "Home Page";
+@section MoreTags{
+    <partial name="Partials/Details/_MoreTags" />
 }
 <div class="text-center">
     <h1 class="display-6">@Model?.SitePage?.Title</h1>

@@ -1,4 +1,4 @@
-﻿@model SitePageViewModel
+﻿@model SettingsViewModel
 @if (Model?.SitePages != null && Model?.SitePages.Count() > 0)
 {
     <table class="table table-responsive text-center">
@@ -32,6 +32,7 @@
                         @sitePage.Category
                     </td>
                     <td>
+                        <a href="@Url.Action("Details","SitePage", new {Id = sitePage.Id})" class="btn btn-success btn-sm">Προβολή</a>
                         <a href="@Url.Action("Edit","SitePage", new {Id = sitePage.Id})" class="btn btn-primary btn-sm">Επεξεργασία</a>
                     </td>
                 </tr>

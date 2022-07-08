@@ -17,5 +17,6 @@ namespace TwoDaysProject.Database
             new CustomDbInitializer(modelBuilder).Seed();
         }
         public DbSet<SitePage> SitePages { get; set; }
+        public DbSet<GeneralConfig> GeneralConfigs { get; set; }
     }
 }
