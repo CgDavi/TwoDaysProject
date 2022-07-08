@@ -21,12 +21,6 @@ namespace TwoDaysProject.Services.ApiServices.NewsApi.Services
             var body = @"";
             request.AddParameter("text/plain", body, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
-
-
-            //var apiUrl = "https://newsapi.org/v2/top-headlines?category="+category+"&apiKey="+apiKey;
-            //var client = new RestClient(apiUrl);
-            //var request = new RestRequest(Method.GET);
-            //IRestResponse response = client.Execute(request);
             var json = response.Content;
             if (json == "")
             {
@@ -34,10 +28,6 @@ namespace TwoDaysProject.Services.ApiServices.NewsApi.Services
             }
             var jsonResult = JsonConvert.DeserializeObject(json)?.ToString();
             var datalist = JsonConvert.DeserializeObject<NewsApiDto>(jsonResult);
-            //var clientTasks = JsonConvert.DeserializeObject<IEnumerable<ArticleDto>>(jsonResult, new JsonSerializerSettings
-            //{
-            //    NullValueHandling = NullValueHandling.Ignore
-            //});
             return datalist;
         }
     }
