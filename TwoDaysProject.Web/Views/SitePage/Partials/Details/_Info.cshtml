@@ -1,0 +1,18 @@
+﻿@model SitePageViewModel
+@if (Model?.Data.Articles != null && Model?.Data.Articles.Count() > 0)
+{
+    @foreach (var article in Model?.Data.Articles)
+    {
+        <ul>
+            <li>
+                <a href="@article.Url" target="_blank">@article.Title</a> (<i>@article.Source.Name</i>, @article.PublishedAt?.ToString("dd-MM"))
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <div class="alert alert-warning text-center">
+        Δεν βρέθηκαν αποτελέσματα!
+    </div>
+}

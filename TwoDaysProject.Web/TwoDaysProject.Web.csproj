@@ -25,6 +25,7 @@
     <ProjectReference Include="..\TwoDaysProject.Core\TwoDaysProject.Core.csproj" />
     <ProjectReference Include="..\TwoDaysProject.Database\TwoDaysProject.Database.csproj" />
     <ProjectReference Include="..\TwoDaysProject.Entities\TwoDaysProject.Entities.csproj" />
+    <ProjectReference Include="..\TwoDaysProject.Services\TwoDaysProject.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using TwoDaysProject.Database;
 using TwoDaysProject.Entities.Identity;
 using System.Reflection;
+using TwoDaysProject.Services.Services;
+using TwoDaysProject.Services.ServiceManagers;
+using TwoDaysProject.Services.ApiServices.NewsApi.Services;
+using TwoDaysProject.Services.ApiServices.NewsApi;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'CustomDbContextConnection' not found.");
@@ -12,6 +16,8 @@ builder.Services.AddDbContext<CustomDbContext>(options =>
 builder.Services.AddDefaultIdentity<CustomUser>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<CustomRole>()
     .AddEntityFrameworkStores<CustomDbContext>();
 
+builder.Services.AddTransient<ISitePageManager, SitePageServices>();
+builder.Services.AddTransient<INewsApiManager, NewsApiServices>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddControllersWithViews().AddDataAnnotationsLocalization().AddApplicationPart(Assembly.GetAssembly(typeof(TwoDaysProject.Core.Controllers.HomeController))).AddRazorRuntimeCompilation();
 

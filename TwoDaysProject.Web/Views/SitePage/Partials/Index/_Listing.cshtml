@@ -1,0 +1,48 @@
+﻿@model SitePageViewModel
+@if (Model?.SitePages != null && Model?.SitePages.Count() > 0)
+{
+    <table class="table table-responsive text-center">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Τίτλος
+                </th>
+                <th>
+                    Κατηγορία
+                </th>
+                <th>
+                    Ενέργειες
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sitePage in Model.SitePages)
+            {
+                <tr>
+                    <td>
+                        @sitePage.Id
+                    </td>
+                    <td>
+                        @sitePage.Title
+                    </td>
+                    <td>
+                        @sitePage.Category
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit","SitePage", new {Id = sitePage.Id})" class="btn btn-primary btn-sm">Επεξεργασία</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning text-center">
+        Δεν υπάρχουν διαθέσιμες σελίδες ακόμα.
+    </div>
+}

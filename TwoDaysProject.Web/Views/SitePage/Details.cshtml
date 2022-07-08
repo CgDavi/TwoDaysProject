@@ -1,0 +1,9 @@
+﻿@model SitePageViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-6">@Model?.SitePage?.Title</h1>
+</div>
+<hr />
+<partial name="Partials/Details/_Info" />

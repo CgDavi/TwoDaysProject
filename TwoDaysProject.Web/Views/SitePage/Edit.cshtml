@@ -1,0 +1,9 @@
+﻿@model SitePageViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-6">Επεξεργασία Σελίδας <b class="text-primary">@Model?.SitePage.Title</b></h1>
+</div>
+<hr />
+<partial name="Partials/Edit/_Form" />

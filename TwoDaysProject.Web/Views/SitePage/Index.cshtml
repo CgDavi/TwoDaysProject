@@ -1,0 +1,14 @@
+﻿@model SitePageViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Ρυθμίσεις</h1>
+</div>
+<hr />
+<div class="row my-3">
+    <div class="col-lg-2">
+        <a href="@Url.Action("Create","SitePage")" class="btn btn-success" style="width:100%">Προσθήκη Νέας</a>
+    </div>
+</div>
+<partial name="Partials/Index/_Listing" />

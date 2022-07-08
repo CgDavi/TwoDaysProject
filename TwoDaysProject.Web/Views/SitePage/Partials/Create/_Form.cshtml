@@ -1,0 +1,22 @@
+﻿@model SitePageViewModel
+<form action="/SitePage/Create" method="post">
+    <div class="row my-2 text-center">
+        <div class="col-lg-6">
+            <label>Τίτλος</label>
+            <input type="text" class="form-control" name="Title" placeholder="Εισάγετε τον τίτλο της σελίδας εδώ" />
+        </div>
+        <div class="col-lg-6">
+            <label>Κατηγορία</label>
+            <input type="text" class="form-control" name="Category" placeholder="Εισάγετε την κατηγορία της σελίδας εδώ" />
+        </div>
+    </div>
+    <hr />
+    <div class="row my-2">
+        <div class="col-lg-4 mx-auto">
+            <button type="submit" class="btn btn-success" style="width:100%">Δημιουργία</button>
+        </div>
+        <div class="col-lg-4 mx-auto">
+            <a href="@Url.Action("Index","SitePage")" class="btn btn-danger" style="width:100%">Επιστροφή</a>
+        </div>
+    </div>
+</form>
