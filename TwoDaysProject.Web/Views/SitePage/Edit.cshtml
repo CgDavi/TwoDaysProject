@@ -3,10 +3,10 @@
     ViewData["Title"] = "Home Page";
 }
 @section MoreTags{
-    <title>Επεξεργασία Σελίδας @Model?.SitePage?.Title</title>
+    <title>Edit @Model?.SitePage?.Title Page</title>
 }
 <div class="text-center">
-    <h1 class="display-6">Επεξεργασία Σελίδας <b class="text-primary">@Model?.SitePage.Title</b></h1>
+    <h1 class="display-6">Edit <b class="text-primary">@Model?.SitePage?.Title</b> Page</h1>
 </div>
 <hr />
 <partial name="Partials/Edit/_Form" />

@@ -3,21 +3,23 @@
     <input type="hidden" name="Id" value="@Model.Id" />
     <div class="row my-2 text-center">
         <div class="col-lg-6">
-            <label>Τίτλος</label>
+            <label>Title</label>
             <input type="text" class="form-control" name="Title" value="@Model?.Title" />
+            <small>Will be used as category name also on the API</small>
         </div>
         <div class="col-lg-6">
-            <label>Κατηγορία</label>
-            <input type="text" class="form-control" name="Category" value="@Model?.Category" />
+            <label>Results Number</label>
+            <input type="number" class="form-control" name="ResultsNumber" value="@Model?.ResultsNumber" />
+            <small>Type how many results you want to be visible on the page</small>
         </div>
     </div>
     <hr />
     <div class="row my-2">
         <div class="col-lg-4 mx-auto">
-            <button type="submit" class="btn btn-success" style="width:100%">Αποθήκευση αλλαγών</button>
+            <button type="submit" class="btn btn-success" style="width:100%">Save Changes</button>
         </div>
         <div class="col-lg-4 mx-auto">
-            <a href="@Url.Action("Index","SitePage")" class="btn btn-danger" style="width:100%">Επιστροφή</a>
+            <a href="@Url.Action("Index","SitePage")" class="btn btn-danger" style="width:100%">Return to list</a>
         </div>
     </div>
 </form>

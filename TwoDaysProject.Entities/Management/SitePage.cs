@@ -5,6 +5,6 @@ namespace TwoDaysProject.Entities.Management
     public class SitePage : BaseEntity
     {
         public string? Title { get; set; }
-        public string? Category { get; set; }
+        public int ResultsNumber { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿@model SitePageViewModel
-@if (Model?.Data.Articles != null && Model?.Data.Articles.Count() > 0)
+@if (Model?.Data.Articles.Take(Model.SitePage.ResultsNumber) != null && Model?.Data.Articles.Take(Model.SitePage.ResultsNumber).Count() > 0)
 {
-    @foreach (var article in Model?.Data.Articles)
+    @foreach (var article in Model?.Data.Articles.Take(Model.SitePage.ResultsNumber))
     {
         <ul>
             <li>
@@ -13,6 +13,6 @@
 else
 {
     <div class="alert alert-warning text-center">
-        Δεν βρέθηκαν αποτελέσματα!
+        No results found!
     </div>
 }

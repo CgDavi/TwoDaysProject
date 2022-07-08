@@ -3,17 +3,17 @@
     ViewData["Title"] = "Home Page";
 }
 @section MoreTags{
-<title>Ρυθμίσεις</title>
+<title>Settings</title>
 }
 <div class="text-center">
-    <h1 class="display-4">Ρυθμίσεις</h1>
+    <h1 class="display-4">Settings</h1>
 </div>
 <hr />
 <partial name="Partials/Index/_ApiKey" />
 <hr />
 <div class="row my-3">
     <div class="col-lg-2">
-        <a href="@Url.Action("Create","SitePage")" class="btn btn-success" style="width:100%">Προσθήκη Νέας</a>
+        <a href="@Url.Action("Create","SitePage")" class="btn btn-success" style="width:100%">Add New Page</a>
     </div>
 </div>
 <partial name="Partials/Index/_Listing" />

@@ -8,13 +8,10 @@
                     Id
                 </th>
                 <th>
-                    Τίτλος
+                    Title
                 </th>
                 <th>
-                    Κατηγορία
-                </th>
-                <th>
-                    Ενέργειες
+                    Actions
                 </th>
             </tr>
         </thead>
@@ -29,11 +26,8 @@
                         @sitePage.Title
                     </td>
                     <td>
-                        @sitePage.Category
-                    </td>
-                    <td>
-                        <a href="@Url.Action("Details","SitePage", new {Id = sitePage.Id})" class="btn btn-success btn-sm">Προβολή</a>
-                        <a href="@Url.Action("Edit","SitePage", new {Id = sitePage.Id})" class="btn btn-primary btn-sm">Επεξεργασία</a>
+                        <a href="@Url.Action("Details","SitePage", new {Id = sitePage.Id})" class="btn btn-success btn-sm">View</a>
+                        <a href="@Url.Action("Edit","SitePage", new {Id = sitePage.Id})" class="btn btn-primary btn-sm">Edit</a>
                     </td>
                 </tr>
 
@@ -44,6 +38,6 @@
 else
 {
     <div class="alert alert-warning text-center">
-        Δεν υπάρχουν διαθέσιμες σελίδες ακόμα.
+        No results found.
     </div>
 }

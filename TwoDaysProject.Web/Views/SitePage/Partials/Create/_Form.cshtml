@@ -2,21 +2,23 @@
 <form action="/SitePage/Create" method="post">
     <div class="row my-2 text-center">
         <div class="col-lg-6">
-            <label>Τίτλος</label>
-            <input type="text" class="form-control" name="Title" placeholder="Εισάγετε τον τίτλο της σελίδας εδώ" />
+            <label>Title</label>
+            <input type="text" class="form-control" name="Title" placeholder="Enter the site page title here" />
+            <small>Will be used as category name also on the API</small>
         </div>
         <div class="col-lg-6">
-            <label>Κατηγορία</label>
-            <input type="text" class="form-control" name="Category" placeholder="Εισάγετε την κατηγορία της σελίδας εδώ" />
+            <label>Results Number</label>
+            <input type="text" class="form-control" name="ResultsNumber" value="5" />
+            <small>Type how many results you want to be visible on the page (Default: 5)</small>
         </div>
     </div>
     <hr />
     <div class="row my-2">
         <div class="col-lg-4 mx-auto">
-            <button type="submit" class="btn btn-success" style="width:100%">Δημιουργία</button>
+            <button type="submit" class="btn btn-success" style="width:100%">Create</button>
         </div>
         <div class="col-lg-4 mx-auto">
-            <a href="@Url.Action("Index","SitePage")" class="btn btn-danger" style="width:100%">Επιστροφή</a>
+            <a href="@Url.Action("Index","SitePage")" class="btn btn-danger" style="width:100%">Return to list</a>
         </div>
     </div>
 </form>

@@ -48,7 +48,7 @@ namespace TwoDaysProject.Core.Controllers
         {
             var sitePage = new SitePage();
             sitePage.Title = model.Title;
-            sitePage.Category = model.Category;
+            sitePage.ResultsNumber = model.ResultsNumber;
             _sitePageManager.SaveSitePage(sitePage);
             return RedirectToAction("Index");
         }
@@ -58,7 +58,7 @@ namespace TwoDaysProject.Core.Controllers
             model.SitePage = _sitePageManager.GetSitePageById(Id);
             model.Id = model.SitePage.Id;
             model.Title = model.SitePage?.Title;
-            model.Category = model.SitePage?.Category;
+            model.ResultsNumber = model.SitePage.ResultsNumber;
             return View(model);
         }
         [HttpPost]
@@ -66,7 +66,7 @@ namespace TwoDaysProject.Core.Controllers
         {
             var sitePage = _sitePageManager.GetSitePageById(model.Id);
             sitePage.Title = model.Title;
-            sitePage.Category = model.Category;
+            sitePage.ResultsNumber = model.ResultsNumber;
             _sitePageManager.UpdateSitePage(sitePage);
             return RedirectToAction("Index");
         }
@@ -75,7 +75,7 @@ namespace TwoDaysProject.Core.Controllers
             var model = new SitePageViewModel();
             model.SitePage = _sitePageManager.GetSitePageById(Id);
             model.GeneralConfig = _settingsManager.GetGeneralConfig();
-            model.Data = _apiManager.GetArticles(model.GeneralConfig?.ApiKey, model.SitePage?.Category);
+            model.Data = _apiManager.GetArticles(model.GeneralConfig?.ApiKey, model.SitePage?.Title);
             return View(model);
         }
 

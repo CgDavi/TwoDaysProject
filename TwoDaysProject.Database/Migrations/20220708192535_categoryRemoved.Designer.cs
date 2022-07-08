@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TwoDaysProject.Database;
 
@@ -11,9 +12,10 @@ using TwoDaysProject.Database;
 namespace TwoDaysProject.Database.Migrations
 {
     [DbContext(typeof(CustomDbContext))]
-    partial class CustomDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220708192535_categoryRemoved")]
+    partial class categoryRemoved
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -169,21 +171,21 @@ namespace TwoDaysProject.Database.Migrations
                         new
                         {
                             Id = "2c5e174e-3b0e-446f-86af-483d56fd7210",
-                            ConcurrencyStamp = "f9edfb7b-65df-435c-b97a-722b6c5ce33f",
+                            ConcurrencyStamp = "2cc0eef4-f7c2-4b6a-889a-a85ae31845dc",
                             Name = "SuperAdministrator",
                             NormalizedName = "SUPERADMINISTRATOR"
                         },
                         new
                         {
                             Id = "3f09027e-bead-438c-a97a-d9d01f8eade2",
-                            ConcurrencyStamp = "8fc48f88-f5ec-46d0-8c09-858f76f9ad0b",
+                            ConcurrencyStamp = "c0fae5bf-19a4-4c2d-8a3e-e9c3c0a24d8c",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "599f7d0f-c150-421f-9132-5f9e822711c8",
-                            ConcurrencyStamp = "9a21fa79-5b72-439a-9b52-28ff9dd338cc",
+                            ConcurrencyStamp = "a44818df-c29a-44f9-b87d-8d4ef631443f",
                             Name = "Moderator",
                             NormalizedName = "MODERATOR"
                         });
@@ -264,7 +266,7 @@ namespace TwoDaysProject.Database.Migrations
                         {
                             Id = "39db4566-a788-490e-b8a6-4fe9b829fcc2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d7021e6d-b9bb-4495-9766-ac6e8e1e98b8",
+                            ConcurrencyStamp = "6bcd0e88-215a-4c01-a765-bc109f09a3ef",
                             Email = "zisisnikos@outlook.com",
                             EmailConfirmed = true,
                             FirstName = "Nikos",
@@ -272,9 +274,9 @@ namespace TwoDaysProject.Database.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ZISISNIKOS@OUTLOOK.COM",
                             NormalizedUserName = "ZISISNIKOS@OUTLOOK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEO+IRxoWsP7z3vBew1BkaCZsFSDiC9bweqqrP4bFVrqU+HlcVUz+oWDVyTiYwaO5hg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAE6/xJ2cTbrOCB2L8IXNDabslz9cfCSRwNI19KE8kDs82IiFz2i9LphLXzN3D8quA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "af44c21c-1a42-43c0-9c4b-639164486dfc",
+                            SecurityStamp = "10c171da-8085-4ebf-b150-baa823b37bfa",
                             TwoFactorEnabled = false,
                             UserName = "zisisnikos@outlook.com"
                         });
@@ -309,9 +311,6 @@ namespace TwoDaysProject.Database.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("ResultsNumber")
-                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
